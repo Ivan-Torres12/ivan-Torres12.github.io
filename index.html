@@ -36,11 +36,22 @@
       "La ingeniería y licenciatura son campos donde las mujeres pueden florecer. ¡Supera los desafíos y conquista el mundo! 🌸!"
     ];
 
+    
     var envelope = document.querySelector('.envelope-wrapper');
+    var clickCount = 0;
+
     envelope.addEventListener('click', () => {
-      envelope.classList.toggle('flap');
-      var indiceAleatorio = Math.floor(Math.random() * textosAleatorios.length);
-      document.getElementById("texto-aleatorio").innerHTML = textosAleatorios[indiceAleatorio];
+      clickCount++;
+      if (clickCount % 2 === 1) {
+        envelope.classList.add('flap');
+        setTimeout(() => {
+          var indiceAleatorio = Math.floor(Math.random() * textosAleatorios.length);
+          document.getElementById("texto-aleatorio").innerHTML = textosAleatorios[indiceAleatorio];
+        }, 500); // Espera 500 milisegundos (0.5 segundos) antes de cambiar el texto
+      } else {
+        envelope.classList.remove('flap');
+        document.getElementById("texto-aleatorio").innerHTML = '';
+      }
     });
     </script>
 </body>
