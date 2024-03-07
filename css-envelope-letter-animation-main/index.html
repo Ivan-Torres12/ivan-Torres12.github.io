@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz dia Internacional de la Mujer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong><center style="color: rgb(252, 8, 231); font-size: 9px;">🩷Feliz dia Internacional de la Mujer💜</center></strong>
+                        <center><p id="texto-aleatorio"> 
+                        </p></center>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        var textosAleatorios = [
+      "¡Nada puede detener a una mujer en ingeniería y licenciatura! 💪 ¡Persigue tus sueños sin límites! 🚀",
+      "Las mujeres en ingeniería y licenciatura construyen puentes hacia el éxito y derriban barreras. 🌉",
+      "Tu determinación en ingeniería y licenciatura te llevará lejos. ¡Sigue adelante con valentía! 💫",
+      "En cada problema resuelto, las mujeres en ingeniería y licenciatura demuestran su fuerza. 💡",
+      "La clave del éxito en ingeniería y licenciatura está en creer en ti misma. ¡Confía en ti y avanza! ✨",
+      "Cada paso en tu camino hacia la excelencia en ingeniería y licenciatura es testimonio de tu dedicación. 📚",
+      "Las mujeres en ingeniería y licenciatura desafían estereotipos y redefinen límites. 👩‍🔬",
+      "Tu pasión por la ingeniería y licenciatura te llevará lejos. ¡Mantén tu mente enfocada! 🔍",
+      "En un mundo de infinitas oportunidades, las mujeres en ingeniería y licenciatura brillan. 🌟",
+      "La ingeniería y licenciatura son campos donde las mujeres pueden florecer. ¡Supera los desafíos y conquista el mundo! 🌸!"
+    ];
+
+    var envelope = document.querySelector('.envelope-wrapper');
+    envelope.addEventListener('click', () => {
+      envelope.classList.toggle('flap');
+      var indiceAleatorio = Math.floor(Math.random() * textosAleatorios.length);
+      document.getElementById("texto-aleatorio").innerHTML = textosAleatorios[indiceAleatorio];
+    });
+    </script>
+</body>
+</html>
